@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Ventas</title>
+    <style>
+    label {
+    	font-family: arial, sans-serif;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 40%;
+    }
+    td, th {
+      border: 2px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+</head>
+<body>
+    <h2>CONSULTA DE VENTAS</h2>
+
+    <form action="consultar" id="folioForm">
+        <label for="folioField">Folio de Venta:</label>
+        <div>
+            <input name="folio" id="folioField">
+            <button >Consultar</button>
+        </div>
+    </form>
+    <br>
+    <label for="productTable">Listado de Productos:</label>
+    <table id="productTable">
+        <tr>
+            <th>No.</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>107</td>
+            <td>Botella de Agua</td>
+            <td>2</td>
+            <td>10</td>
+            <td>20</td>
+        </tr>
+        <tr><td/><td/><td/><td/><td/></tr>
+        <tr><td/><td/><td/><td/><td/></tr>
+        <tr><td/><td/><td/><td/><td/></tr>
+        <tr><td/><td/><td/><td/><td/></tr>
+    </table>
+    <br>
+    <div>
+        <label for="totalProductos">Total Productos:</label>
+        <input id="totalProductos">
+        <label for="totalVentas">Total Ventas:</label>
+        <input id="totalVentas">
+    </div>
+</body>
+</html>

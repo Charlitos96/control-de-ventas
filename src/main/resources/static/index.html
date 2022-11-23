@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Mi primera aplicacion Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>LOGIN</title>
+    <style>
+        label {
+            font-family: arial, sans-serif;
+        }
+        button {
+        	margin-left: 15%;
+        }
+        #loginForm {
+        	padding: 8px;
+        }
+        .childDiv {
+        	padding: 8px;
+        }
+        </style>
 </head>
 <body>
-
+<h2>LOGIN</h2>
+<br>
+<form action="/login" method="GET" id="loginForm">
+    <div class="childDiv">
+        <label for="userField">Usuario: </label>
+        <input name="user" id="userField">
+    </div>
+    <div class="childDiv">
+        <label for="passwordField">Contraseña: </label>
+        <input name="password" id="passwordField">
+    </div>
+    <button>INGRESAR</button>
+</form>
 </body>
 </html>
