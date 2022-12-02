@@ -6,6 +6,7 @@ public class Venta {
     private String nombre;
     private int cantidad;
     private float precioUnitario;
+    private float total;
 
     public int getFolioVenta() {
         return folioVenta;
@@ -45,6 +46,15 @@ public class Venta {
 
     public void setPrecioUnitario(float precioUnitario) {
         this.precioUnitario = precioUnitario;
+        this.setTotal(cantidad * precioUnitario);
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
     }
 
     @Override
@@ -55,6 +65,7 @@ public class Venta {
                 ", nombre='" + nombre + '\'' +
                 ", cantidad=" + cantidad +
                 ", precioUnitario=" + precioUnitario +
+                ", total=" + total +
                 '}';
     }
 }
