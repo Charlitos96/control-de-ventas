@@ -1,5 +1,7 @@
 package com.example.consultadeventas.Models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Venta {
     private int folioVenta;
     private int idProducto;
@@ -8,6 +10,18 @@ public class Venta {
     private float precioUnitario;
     private float total;
 
+    public Venta() {
+    }
+
+    @Autowired
+    public Venta(int folioVenta, int idProducto, String nombre, int cantidad, float precioUnitario, float total) {
+        this.folioVenta = folioVenta;
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.total = total;
+    }
     public int getFolioVenta() {
         return folioVenta;
     }

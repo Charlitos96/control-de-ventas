@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org ">
 <head>
     <meta charset="UTF-8">
     <title>Consulta de Ventas</title>
@@ -20,48 +22,43 @@
     tr:nth-child(even) {
       background-color: #dddddd;
     }
-</style>
+
+    </style>
 </head>
 <body>
-    <h2>CONSULTA DE VENTAS</h2>
+<h2>CONSULTA DE VENTAS</h2>
 
-    <form action="" id="folioForm">
-        <label for="folioField">Folio de Venta:</label>
-        <div>
-            <input name="folio" id="folioField">
-            <button >Consultar</button>
-        </div>
-    </form>
-    <br>
-    <label for="productTable">Listado de Productos:</label>
-    <table id="productTable">
-        <tr>
-            <th>No.</th>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Precio Unitario</th>
-            <th>Total</th>
-        </tr>
-        <tr>
-            <td>107</td>
-            <td>Botella de Agua</td>
-            <td>2</td>
-            <td>10</td>
-            <td>20</td>
-        </tr>
-        <tr th:each="venta: ${ventas}" >
-            <td /><td/><td/><td/><td/>
-        </tr>
-        <tr><td/><td/><td/><td/><td/></tr>
-        <tr><td/><td/><td/><td/><td/></tr>
-        <tr><td/><td/><td/><td/><td/></tr>
-    </table>
-    <br>
+<form action="consultar" id="folioForm">
+    <label for="folioField">Folio de Venta:</label>
     <div>
-        <label for="totalProductos">Total Productos:</label>
-        <input id="totalProductos">
-        <label for="totalVentas">Total Ventas:</label>
-        <input id="totalVentas">
+        <input name="folio" id="folioField" th:value="${folio}">
+        <button>Consultar</button>
     </div>
+</form>
+<br>
+<label for="productTable">Listado de Productos:</label>
+<table id="productTable">
+    <tr>
+        <th>No.</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+    </tr>
+    <tr th:each="venta : ${ventas}">
+        <td th:text="${venta.idProducto}">107</td>
+        <td th:text="${venta.nombre}">Botella de Agua</td>
+        <td th:text="${venta.cantidad}">2</td>
+        <td th:text="${venta.precioUnitario}">10</td>
+        <td th:text="${venta.total}">20</td>
+    </tr>
+</table>
+<br>
+<div>
+    <label for="totalProductos">Total Productos:</label>
+    <input id="totalProductos" th:value="${totalProductos}" readonly>
+    <label for="totalVentas" >Total Ventas:</label>
+    <input id="totalVentas" th:value="${totalVentas}" readonly>
+</div>
 </body>
 </html>
